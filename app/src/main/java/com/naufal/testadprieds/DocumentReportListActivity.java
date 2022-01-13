@@ -9,6 +9,6 @@ public class DocumentReportListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.document_approval_list_item_layout);
+        setContentView(R.layout.actiivty_document_report_list);
     }
 }

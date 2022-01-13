@@ -16,6 +16,9 @@
             android:name=".DocumentReportListActivity"
             android:exported="true" />
         <activity
+            android:name=".DocumentApprovalListActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -3,17 +3,30 @@ package com.naufal.testadprieds;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.naufal.testadprieds.adapter.CartListAdapter;
+import com.naufal.testadprieds.adapter.ListApprovalDocumentAdapter;
+import com.naufal.testadprieds.databinding.FragmentDetailDocumentsBottomSheetBinding;
+import com.naufal.testadprieds.model.CartList;
+import com.naufal.testadprieds.model.ListDocumentApproval;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link DetailDocumentsBottomSheet#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DetailDocumentsBottomSheet extends Fragment {
+public class DetailDocumentsBottomSheet extends BottomSheetDialogFragment {
+
+    FragmentDetailDocumentsBottomSheetBinding binding;
+    CartListAdapter adapter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +72,23 @@ public class DetailDocumentsBottomSheet extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detail_documents_bottom_sheet, container, false);
+        binding = FragmentDetailDocumentsBottomSheetBinding.inflate(inflater);
+
+        adapter = new CartListAdapter(getActivity());
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+//        adapter.addListener(this);
+        binding.listCart.setHasFixedSize(true);
+        binding.listCart.setLayoutManager(layoutManager);
+        binding.listCart.setAdapter(adapter);
+
+        ArrayList<CartList> approvals = new ArrayList<>();
+        approvals.add(new CartList("2220 WRG KEMASAN DRUM @ 200 KG WIP", "210000430", "12/7/21, 11:40 AM", "4", "", "Rp22,555.00", "Rp45,110.00", "", false));
+        approvals.add(new CartList("AMPLAS BT BTEX P0000 M 18 NB 150MMX230MM - BROWN", "210000430", "12/7/21, 11:40 AM", "4", "", "Rp22,555.00", "Rp45,110.00", "", false));
+
+        return binding.getRoot();
+    }
+
+    void closeBottom(){
+        dismiss();
     }
 }
