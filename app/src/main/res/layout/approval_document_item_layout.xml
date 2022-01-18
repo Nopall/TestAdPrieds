@@ -20,12 +20,14 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/txtDocument"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Documents"
                 android:textSize="14dp" />
 
             <TextView
+                android:id="@+id/txtApproval"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Approval List"
@@ -34,12 +36,13 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <Button
+            android:id="@+id/btnDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:backgroundTint="#28B8E2"
             android:layout_gravity="right"
+            android:backgroundTint="#28B8E2"
             android:drawableRight="@drawable/ic_right_arrow"
             android:gravity="center"
             android:text="Details" />

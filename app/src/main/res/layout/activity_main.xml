@@ -10,7 +10,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listApproval"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:visibility="visible"
         tools:listitem="@layout/approval_document_item_layout"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

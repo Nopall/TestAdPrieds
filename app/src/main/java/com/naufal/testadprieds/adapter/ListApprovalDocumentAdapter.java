@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 
 import com.naufal.testadprieds.R;
 import com.naufal.testadprieds.databinding.ApprovalDocumentItemLayoutBinding;
+import com.naufal.testadprieds.databinding.DocumentApprovalListItemLayoutBinding;
 import com.naufal.testadprieds.model.ApprovalDocument;
 import com.naufal.testadprieds.model.ListDocumentApproval;
 
@@ -32,11 +33,11 @@ public class ListApprovalDocumentAdapter extends BaseRecycleViewAdapter<ListDocu
     }
 
     public class ViewHolder extends BaseRecycleViewAdapter.ViewHolder {
-        ApprovalDocumentItemLayoutBinding binding;
+        DocumentApprovalListItemLayoutBinding binding;
 
         public ViewHolder(View view) {
             super(view);
-            binding = ApprovalDocumentItemLayoutBinding.bind(view);
+            binding = DocumentApprovalListItemLayoutBinding.bind(view);
         }
     }
 
@@ -45,7 +46,19 @@ public class ListApprovalDocumentAdapter extends BaseRecycleViewAdapter<ListDocu
         ListDocumentApproval item = getItem(position);
         holder.item = item;
 
+        holder.binding.btnDetail.setOnClickListener(view -> {
+            listener.onDetails(item);
+        });
 
+
+        holder.binding.btnApprove.setOnClickListener(view -> {
+            listener.onApproved(item);
+        });
+
+
+        holder.binding.btnReject.setOnClickListener(view -> {
+            listener.onReject(item);
+        });
     }
 
     @Override

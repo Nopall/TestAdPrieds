@@ -23,8 +23,8 @@ public class DocumentApprovalListActivity extends AppCompatActivity implements L
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.actiivty_document_approval_list);
         binding = ActiivtyDocumentApprovalListBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         adapter = new ListApprovalDocumentAdapter(this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -36,6 +36,8 @@ public class DocumentApprovalListActivity extends AppCompatActivity implements L
         ArrayList<ListDocumentApproval> approvals = new ArrayList<>();
         approvals.add(new ListDocumentApproval("12/7/21, 11:40 AM", true, "MTU-211122", "Material Usage", "ayesbenedit", "BENEDIT", "Waiting for Approval", "15 Days"));
         approvals.add(new ListDocumentApproval("12/7/21, 11:40 AM", true, "MTU-211122", "Material Usage", "ayesbenedit", "BENEDIT", "Waiting for Approval", "15 Days"));
+
+        adapter.setData(approvals);
     }
 
     @Override

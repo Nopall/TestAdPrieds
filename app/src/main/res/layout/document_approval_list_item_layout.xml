@@ -237,6 +237,7 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDetail"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="40dp"
@@ -251,6 +252,7 @@
                 android:text="Details" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnApprove"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="40dp"
@@ -266,6 +268,7 @@
                 android:text="Approved" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnReject"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="40dp"

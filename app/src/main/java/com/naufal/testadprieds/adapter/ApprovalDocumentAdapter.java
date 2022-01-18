@@ -49,6 +49,12 @@ public class ApprovalDocumentAdapter extends BaseRecycleViewAdapter<ApprovalDocu
         ApprovalDocument item = getItem(position);
         holder.item = item;
 
+        holder.binding.txtApproval.setText(item.getApproval());
+        holder.binding.txtDocument.setText(item.getDocuments());
+
+        holder.binding.btnDetail.setOnClickListener(view -> {
+            listener.onClick(item);
+        });
 
     }
 
